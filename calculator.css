@@ -1,0 +1,107 @@
+.background{ /*背景の設定*/
+  width:100%;
+  height:1000px;
+  background-color:black;
+  display:flex;
+  justify-content:center;
+}
+
+.calculator{ /*計算機の外形部分*/
+  width:600px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:100px;
+  padding:30px 50px 50px;
+  border:solid 5px; 
+  border-image:linear-gradient(30deg,Magenta,yellow,Cyan,Magenta)1;
+  animation:2s linear infinite;
+  background-color:black;
+  border-radius:10px;
+  height:625px;
+}
+
+.calculator h2{
+  padding-bottom:60px;
+  color:#00ff00;
+}
+
+.display{ /*計算機のディスプレイ部分*/
+  width:100%;
+  height:50px;
+  background-color:black;
+  color:#00ff00;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  margin-bottom:80px;
+  border-radius:3px;
+  border:2px solid; /*#00ff00;*/
+  border-image:linear-gradient(-35deg,Magenta,yellow,Cyan,Magenta)1;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.display p{
+  font-size:30px;
+}
+
+.button_small, .button_big{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  width:100%;
+}
+
+button{
+  height:40px;
+  margin:5px 1px;
+  /*border:2px solid #00ff00;*/ /*borderはない方が見た目がいいためコメントアウト*/
+  /*border-image:linear-gradient(45deg,Magenta,yellow,Cyan,Magenta)1;*/
+  border-radius:10px;
+  position:relative;
+}
+
+/*入力禁止時にボタンを虹色にするコード(使わない)
+button::after{
+  content:'';
+  position:absolute;
+  top:-1px;
+  bottom:-1px;
+  left:-1px;
+  right:-1px;
+  background:linear-gradient(45deg,Magenta,yellow,Cyan,Magenta);
+  z-index:-1;
+  border-radius:11px;
+}
+*/
+
+.button_small button{
+  width:calc(100% / 4 - 8px);
+  font-size:25px;
+  background-color:black;
+  color:#00ff00;
+}
+
+.button_big button{
+  width:calc(100% / 2 - 4px);
+  font-size:30px;
+  margin-top:30px;
+}
+
+.button_AC{
+  /*background-color:#00ff00;*/ /*ACボタンの背景色を緑色にするコード　今回は使わない*/
+  background-image:linear-gradient(125deg,Magenta,yellow,Cyan,Magenta);
+}
+
+.button_equal{
+  background-color:black;
+  color:#00ff00;
+}
+
+.button_hidden{/*このクラスが与えられたボタンを押せなくする*/
+  opacity:0.3;
+  cursor:default;
+  pointer-events:none;
+}
